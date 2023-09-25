@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="parent"></div>
+</body>
+<script>
+    fetch("http://localhost:8090/recipe/all")
+    .then((res)=>res.json())
+    .then((res)=>show(res))
+
+    let show = (data) => {
+      document.getElementById("parent").innerHTML = "";
+      data.map((ele,index) => {
+        let name=document.createElement("h2")
+        name.innerHTML=ele.name
+        let description = document.createElement("h5");
+        description.innerHTML=ele.description
+        let preparationTime = document.createElement("h4");
+        preparationTime.innerHTML = ele.preparationTime;
+        let cookingTime = document.createElement("h5");
+        cookingTime.innerHTML = cookingTime.ele
+        let imageUrl = document.createElement("img");
+        imageUrl.innerHTML = imageUrl.ele
+        let country = document.createElement("h3");
+        country.innerHTML = cookingTime.ele
+        let div = document.createElement("div");
+        div.append(name, description, preparationTime, cookingTime, imageUrl, country);
+      })}
+</script>
+</html>
